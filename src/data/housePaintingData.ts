@@ -1,11 +1,20 @@
 import { CompletedProject, ServicePackage, ColorSwatch, ActiveJob } from '../types/painting';
 
 // User's real house painting images from /public/assets/aistudio/
-export const interiorPainterAtWorkImg = '/assets/aistudio/sddefault_abb78b0e.jpg';
-export const twoStoryExteriorImg = '/assets/aistudio/housejpg_fc181272.jpg';
-export const lilacOrangeExteriorImg = '/assets/aistudio/images_33a61193.jpg';
-export const peachBungalowImg = '/assets/aistudio/houseimage_20afd6fb.jpg';
+// Images stored in the public folder
+const BASE_URL = import.meta.env.BASE_URL;
 
+export const interiorPainterAtWorkImg =
+  `${BASE_URL}assets/aistudio/sddefault_abb78b0e.jpg`;
+
+export const twoStoryExteriorImg =
+  `${BASE_URL}assets/aistudio/housejpg_fc181272.jpg`;
+
+export const lilacOrangeExteriorImg =
+  `${BASE_URL}assets/aistudio/images_33a61193.jpg`;
+
+export const peachBungalowImg =
+  `${BASE_URL}assets/aistudio/houseimage_20afd6fb.jpg`;
 export const COMPLETED_PROJECTS: CompletedProject[] = [
   {
     id: 'proj-01',
