@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0d0c0b;
+    color: #e5e0d8;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom scrollbar for gallery and modal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #151412;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38342f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5c554c;
+}
+
+/* Canvas texture subtle overlay */
+.canvas-grain {
+  background-image: radial-gradient(rgba(210, 190, 160, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
