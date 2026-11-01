@@ -1,6 +1,7 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Sparkles, Paintbrush, HeartHandshake, Award } from 'lucide-react';
-import { interiorPainterAtWorkImg, peachBungalowImg } from '../data/housePaintingData';
+import { ShieldCheck, Sparkles, Paintbrush, Award } from 'lucide-react';
+import { peachBungalowImg } from '../data/housePaintingData';
+import ownerPhoto from '../assets/images/owner-photo.jpg';
 
 interface CraftsmanshipStandardsProps {
   onScheduleEstimate: () => void;
@@ -17,46 +18,46 @@ export const CraftsmanshipStandards: React.FC<CraftsmanshipStandardsProps> = ({ 
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative p-2.5 bg-[#121929] border border-[#202d45] rounded-2xl shadow-2xl">
               <img
-                src={peachBungalowImg}
-                alt="Executive bungalow exterior painting"
-                className="w-full h-auto object-cover rounded-xl"
+                src={ownerPhoto}
+                alt="JudeCraft Finishes owner wearing workwear at an industrial site"
+                className="w-full h-auto object-cover object-top rounded-xl max-h-[560px]"
               />
               <div className="p-3 text-center text-xs text-[#94a3b8]">
-                Bespoke exterior porch arches, decorative pillars, and window hoods
+                The owner on site, focused on safe and careful work
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-7 space-y-6 order-1 lg:order-2">
             <div className="text-xs uppercase tracking-wider text-[#38bdf8] font-bold">
-              The Master Painter Difference
+              Meet the Owner
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              “Painting is 80% preparation. Anyone can apply paint; professional painters prepare surfaces to resist sun and heavy rain for years.”
+              “Every great finish starts with care, preparation, and pride in the work.”
             </h2>
 
             <div className="space-y-4 text-sm sm:text-base text-[#94a3b8] leading-relaxed">
               <p>
-                We established our house painting profession with one core mission: delivering immaculate paintwork that homeowners are proud of. Too many properties suffer from peeling paint caused by unprimed concrete, paint spattered across expensive floor tiles, and crooked lines around door frames and POP arches.
+                JudeCraft Finishes is led by a hands-on painting professional who believes good work begins with careful preparation and respect for every property. The owner stays involved in the work, from planning each project to checking the final finish.
               </p>
               <p>
-                From spacious halls, POP ceilings, and bedroom suites to single-storey bungalows, multi-storey residential estates, and compound boundary walls, our dedicated painters bring drop cloth tile protection, alkali-resistant concrete primers, and surgical freehand cut-in lines to every project across Ghana.
+                From interior rooms and ceilings to exterior walls and full buildings, we take on a wide range of painting and finishing projects. We work with clients across Ghana and focus on clean, careful, dependable results.
               </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-[#1e273c]">
               <div>
-                <span className="text-2xl font-extrabold text-white block">15+ Years</span>
-                <span className="text-xs text-[#64748b]">House Painting Experience</span>
+                <span className="text-2xl font-extrabold text-white block">Hands-on</span>
+                <span className="text-xs text-[#64748b]">Owner-led service</span>
               </div>
               <div>
-                <span className="text-2xl font-extrabold text-white block">180+ Buildings</span>
-                <span className="text-xs text-[#64748b]">Painted Across Ghana</span>
+                <span className="text-2xl font-extrabold text-white block">All-round</span>
+                <span className="text-xs text-[#64748b]">Interior and exterior work</span>
               </div>
               <div>
-                <span className="text-2xl font-extrabold text-white block">100% Guaranteed</span>
-                <span className="text-xs text-[#64748b]">Clean Floors & Zero Peeling</span>
+                <span className="text-2xl font-extrabold text-white block">Quality focused</span>
+                <span className="text-xs text-[#64748b]">Care at every stage</span>
               </div>
             </div>
           </div>

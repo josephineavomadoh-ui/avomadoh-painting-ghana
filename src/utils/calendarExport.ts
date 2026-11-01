@@ -71,7 +71,7 @@ export function downloadIcsFile(event: CalendarEventParams): void {
     const icsContent = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Avomadoh Painting Services//House Painting Walkthrough Scheduling//EN',
+      'PRODID:-//JudeCraft Finishes//House Painting Walkthrough Scheduling//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',

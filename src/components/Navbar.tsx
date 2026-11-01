@@ -1,9 +1,13 @@
 import React from 'react';
-import { PaintRoller, Calendar, Phone, MessageSquare, SlidersHorizontal } from 'lucide-react';
+import { PaintRoller, Calendar, MessageSquare, Palette, SlidersHorizontal } from 'lucide-react';
+
+type ColorTheme = 'ocean' | 'forest' | 'sunset' | 'light';
 
 interface NavbarProps {
   activeTab: 'work' | 'services' | 'estimate' | 'tracker' | 'about';
   setActiveTab: (tab: 'work' | 'services' | 'estimate' | 'tracker' | 'about') => void;
+  theme: ColorTheme;
+  setTheme: (theme: ColorTheme) => void;
   onOpenBooking: () => void;
   onOpenDashboard: () => void;
   activeJobsCount: number;
@@ -12,10 +16,19 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   setActiveTab,
+  theme,
+  setTheme,
   onOpenBooking,
   onOpenDashboard,
   activeJobsCount,
 }) => {
+  const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedTheme = event.target.value;
+    if (selectedTheme === 'ocean' || selectedTheme === 'forest' || selectedTheme === 'sunset' || selectedTheme === 'light') {
+      setTheme(selectedTheme);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-[#0e1117]/95 backdrop-blur-md border-b border-[#1e2638]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -31,14 +44,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-lg sm:text-xl text-white tracking-tight group-hover:text-[#38bdf8] transition-colors">
-                Avomadoh Painting
-              </span>
-              <span className="hidden sm:inline-flex items-center text-[10px] font-semibold text-emerald-400 bg-emerald-950/70 border border-emerald-800/80 px-2 py-0.5 rounded">
-                Ghana Registered
+                JudeCraft Finishes
               </span>
             </div>
             <span className="block text-[11px] text-[#94a3b8] tracking-wider uppercase">
-              Master House & Room Painters · Accra & Kumasi
+              Residential & Commercial Finishes · Nationwide
             </span>
           </div>
         </div>
@@ -53,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-[#94a3b8] hover:text-white'
             }`}
           >
-            Completed Houses
+            Projects
           </button>
 
           <button
@@ -64,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-[#94a3b8] hover:text-white'
             }`}
           >
-            Services & Rates (GH₵)
+            Services
           </button>
 
           <button
@@ -75,10 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-[#94a3b8] hover:text-white'
             }`}
           >
-            <span>Quote & Schedule</span>
-            <span className="text-[10px] text-[#38bdf8] uppercase tracking-wider bg-[#38bdf8]/15 px-1.5 py-0.5 rounded border border-[#38bdf8]/30">
-              Cedis
-            </span>
+            <span>Get Quote</span>
           </button>
 
           <button
@@ -89,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-[#94a3b8] hover:text-white'
             }`}
           >
-            Track Paint Job
+            Track Job
           </button>
 
           <button
@@ -100,15 +107,30 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : 'text-[#94a3b8] hover:text-white'
             }`}
           >
-            Why Choose Us
+            About
           </button>
+          <label className="flex items-center gap-1.5 text-xs text-[#94a3b8]">
+            <Palette className="w-3.5 h-3.5" aria-hidden="true" />
+            <span className="sr-only">Color theme</span>
+            <select
+              aria-label="Color theme"
+              value={theme}
+              onChange={handleThemeChange}
+              className="bg-transparent text-xs text-white border border-[#273248] rounded-md px-2 py-1.5 focus:outline-none focus:border-[#38bdf8]"
+            >
+              <option value="ocean">Ocean</option>
+              <option value="forest">Forest</option>
+              <option value="sunset">Sunset</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
         </nav>
 
         {/* Action controls */}
         <div className="flex items-center gap-2.5">
           {/* WhatsApp Direct link */}
           <a
-            href="https://wa.me/233241234567?text=Hello%20Avomadoh%20Painters,%20I%20would%20like%20an%20estimate%20for%20house%20painting"
+            href="https://wa.me/233241234567?text=Hello%20JudeCraft%20Finishes,%20I%20would%20like%20an%20estimate%20for%20house%20painting"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs text-emerald-400 hover:text-white border border-emerald-800/80 hover:border-emerald-500 rounded-md transition-colors bg-emerald-950/40"
@@ -176,6 +198,21 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           About
         </button>
+        <label className="flex items-center gap-1 text-[#94a3b8]">
+          <Palette className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+          <span className="sr-only">Color theme</span>
+          <select
+            aria-label="Color theme"
+            value={theme}
+            onChange={handleThemeChange}
+            className="w-[66px] bg-transparent text-[10px] text-white border-0 focus:outline-none"
+          >
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+            <option value="sunset">Sunset</option>
+            <option value="light">Light</option>
+          </select>
+        </label>
       </div>
     </header>
   );

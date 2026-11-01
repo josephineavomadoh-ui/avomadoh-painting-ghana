@@ -18,6 +18,120 @@
   }
 }
 
+[data-theme="ocean"] {
+  --theme-accent: #38bdf8;
+  --theme-action: #0284c7;
+  --theme-action-hover: #0369a1;
+}
+
+[data-theme="forest"] {
+  --theme-accent: #86efac;
+  --theme-action: #16a34a;
+  --theme-action-hover: #15803d;
+}
+
+[data-theme="sunset"] {
+  --theme-accent: #fdba74;
+  --theme-action: #ea580c;
+  --theme-action-hover: #c2410c;
+}
+
+[data-theme="light"] {
+  --theme-accent: #0369a1;
+  --theme-action: #2563eb;
+  --theme-action-hover: #1d4ed8;
+  color-scheme: light;
+}
+
+[data-theme="light"][class*="bg-[#0"] {
+  background-color: #f8fafc !important;
+  color: #172033;
+}
+
+[data-theme] [class~="text-[#38bdf8]"],
+[data-theme] [class~="hover:text-[#38bdf8]"]:hover {
+  color: var(--theme-accent) !important;
+}
+
+[data-theme] [class~="bg-[#0284c7]"] {
+  background-color: var(--theme-action) !important;
+}
+
+[data-theme] [class~="hover:bg-[#0369a1]"]:hover {
+  background-color: var(--theme-action-hover) !important;
+}
+
+[data-theme] [class~="border-[#38bdf8]"] {
+  border-color: var(--theme-accent) !important;
+}
+
+[data-theme] [class~="border-[#38bdf8]/30"] {
+  border-color: color-mix(in srgb, var(--theme-accent) 30%, transparent) !important;
+}
+
+[data-theme] [class~="bg-[#38bdf8]/15"] {
+  background-color: color-mix(in srgb, var(--theme-accent) 15%, transparent) !important;
+}
+
+[data-theme] ::selection {
+  background-color: var(--theme-accent);
+}
+
+[data-theme="light"] [class*="bg-[#0"]:not([class~="bg-[#0284c7]"]):not([class~="bg-[#0369a1]"]) {
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] [class*="bg-[#1"] {
+  background-color: #f1f5f9 !important;
+}
+
+[data-theme="light"] [class*="bg-[#2"] {
+  background-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] [class*="from-[#0"],
+[data-theme="light"] [class*="to-[#0"],
+[data-theme="light"] [class*="via-[#0"] {
+  --tw-gradient-from: #f8fafc var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(248 250 252 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] [class~="text-white"],
+[data-theme="light"] [class~="text-[#e2e8f0]"],
+[data-theme="light"] [class~="text-[#f4efe8]"],
+[data-theme="light"] [class~="text-[#f5f1eb]"],
+[data-theme="light"] [class~="text-[#cfc7bc]"] {
+  color: #172033 !important;
+}
+
+[data-theme="light"] [class~="text-[#94a3b8]"],
+[data-theme="light"] [class~="text-[#cbd5e1]"],
+[data-theme="light"] [class~="text-[#64748b]"],
+[data-theme="light"] [class~="text-[#8f887d]"],
+[data-theme="light"] [class~="text-[#a39c92]"],
+[data-theme="light"] [class~="text-[#7d766b]"],
+[data-theme="light"] [class~="text-[#736c61]"] {
+  color: #475569 !important;
+}
+
+[data-theme="light"] [class*="border-[#0"] {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] [class*="border-[#1"] {
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] [class*="border-[#2"] {
+  border-color: #94a3b8 !important;
+}
+
+[data-theme="light"] [class~="bg-[#0284c7]"][class~="text-white"],
+[data-theme="light"] [class~="bg-[#0284c7]"] [class~="text-white"] {
+  color: #ffffff !important;
+}
+
 /* Custom scrollbar for gallery and modal */
 ::-webkit-scrollbar {
   width: 6px;

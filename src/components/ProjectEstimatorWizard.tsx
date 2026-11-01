@@ -55,7 +55,7 @@ export const ProjectEstimatorWizard: React.FC<ProjectEstimatorWizardProps> = ({
   const [clientEmail, setClientEmail] = useState<string>('');
   const [clientPhone, setClientPhone] = useState<string>('');
   const [streetAddress, setStreetAddress] = useState<string>('');
-  const [cityZip, setCityZip] = useState<string>('Accra');
+  const [cityZip, setCityZip] = useState<string>('');
   const [projectNotes, setProjectNotes] = useState<string>('');
   const [uploadedPhotos, setUploadedPhotos] = useState<{ name: string; size: string; preview: string }[]>([]);
 
@@ -107,8 +107,8 @@ export const ProjectEstimatorWizard: React.FC<ProjectEstimatorWizardProps> = ({
 
   const handleConfirmSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!clientName || !clientEmail || !streetAddress) {
-      alert('Please fill out your name, email, and street address to schedule your estimate walkthrough.');
+    if (!clientName || !clientEmail || !streetAddress || !cityZip) {
+      alert('Please fill out your name, email, street address, and town or region to schedule your estimate walkthrough.');
       return;
     }
 
@@ -121,7 +121,7 @@ export const ProjectEstimatorWizard: React.FC<ProjectEstimatorWizardProps> = ({
       email: clientEmail,
       phone: clientPhone || '(Provided)',
       streetAddress,
-      cityZip: cityZip || 'Accra, Ghana',
+      cityZip,
       consultationType,
       date: selectedDate,
       timeSlot: selectedTimeSlot,
@@ -775,10 +775,11 @@ export const ProjectEstimatorWizard: React.FC<ProjectEstimatorWizardProps> = ({
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="text-xs text-[#94a3b8] block mb-1">Town / Area & City</label>
+                  <label className="text-xs text-[#94a3b8] block mb-1">Town / Region *</label>
                   <input
                     type="text"
-                    placeholder="e.g. East Legon, Accra / Nhyiaeso, Kumasi / Tema Community 25"
+                    required
+                    placeholder="Enter your town, region, or area"
                     value={cityZip}
                     onChange={(e) => setCityZip(e.target.value)}
                     className="w-full p-2.5 bg-[#0e1422] border border-[#1e2a42] rounded-lg text-xs text-white placeholder-[#64748b] focus:outline-none focus:border-[#38bdf8]"

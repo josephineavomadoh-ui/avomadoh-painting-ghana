@@ -20,6 +20,15 @@ import { SAMPLE_ACTIVE_JOBS } from './data/housePaintingData';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'work' | 'services' | 'estimate' | 'tracker' | 'about'>('work');
+  const [theme, setTheme] = useState<'ocean' | 'forest' | 'sunset' | 'light'>(() => {
+    try {
+      const savedTheme = localStorage.getItem('judecraft-theme');
+      return savedTheme === 'forest' || savedTheme === 'sunset' || savedTheme === 'light' ? savedTheme : 'ocean';
+    } catch (error) {
+      console.error('Unable to load the saved color theme:', error);
+      return 'ocean';
+    }
+  });
   const [selectedProject, setSelectedProject] = useState<CompletedProject | null>(null);
   const [estimatorCategory, setEstimatorCategory] = useState<string>('interior_rooms');
   
@@ -96,6 +105,14 @@ export default function App() {
       // ignore
     }
   }, [activeJobs]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('judecraft-theme', theme);
+    } catch (error) {
+      console.error('Unable to save the selected color theme:', error);
+    }
+  }, [theme]);
 
   // Handle new walkthrough booking
   const handleBookingSuccess = (newBooking: WalkthroughBooking) => {
@@ -235,12 +252,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0d14] text-[#e2e8f0] flex flex-col selection:bg-[#38bdf8] selection:text-[#0a0d14]">
+    <div data-theme={theme} className="min-h-screen bg-[#0a0d14] text-[#e2e8f0] flex flex-col selection:bg-[#38bdf8] selection:text-[#0a0d14]">
       
       {/* Navigation Header */}
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        theme={theme}
+        setTheme={setTheme}
         onOpenBooking={() => {
           setActiveTab('estimate');
           window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,7 +1,7 @@
-# Avomadoh Painting Services Ghana 🇬🇭
-> Master House & Room Painters · Residential, Storey Buildings & POP Ceilings · Accra & Kumasi, Ghana
+# JudeCraft Finishes
+> Residential & Commercial Painting and Finishing · Serving Clients Across Ghana
 
-A professional web application and scheduling platform for **Avomadoh Painting Services**, showcasing real completed painting projects across Ghana, an instant cost estimator in Ghana Cedis (`GH₵`), an integrated walkthrough booking system, and a live homeowner project tracker.
+A professional web application and scheduling platform for **JudeCraft Finishes**, showcasing completed painting projects across Ghana, an instant cost estimator in Ghana Cedis (`GH₵`), an integrated walkthrough booking system, and a live project tracker.
 
 ---
 
@@ -81,8 +81,8 @@ A professional web application and scheduling platform for **Avomadoh Painting S
 
 ## 📞 Contact & Business Information
 
-- **Company:** Avomadoh Painting Services
-- **Location:** Greater Accra (East Legon, Spintex, Cantonments, Tema) & Kumasi, Ghana
+- **Company:** JudeCraft Finishes
+- **Service area:** Nationwide across Ghana
 - **Phone / WhatsApp:** +233 24 123 4567 / 055 892 1084
 - **Currency:** Ghana Cedis (GH₵)
 - **Registration:** Registrar General's Department (RGD) Registered

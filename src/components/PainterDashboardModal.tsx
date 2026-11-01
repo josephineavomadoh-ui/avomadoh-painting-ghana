@@ -66,7 +66,7 @@ export const PainterDashboardModal: React.FC<PainterDashboardModalProps> = ({
             </div>
             <div>
               <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-                Avomadoh Painting Services — Contractor Admin
+                JudeCraft Finishes — Contractor Admin
               </h3>
               <span className="text-[11px] text-[#94a3b8] uppercase tracking-wider font-semibold">
                 Ghana Master House Painter Management Dashboard

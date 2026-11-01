@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PaintRoller, Phone, Mail, MapPin, ShieldCheck, Check, MessageSquare } from 'lucide-react';
+import { PaintRoller, Phone, Mail, Check, MessageSquare } from 'lucide-react';
 
 interface FooterProps {
   onNavigateTab: (tab: 'work' | 'services' | 'estimate' | 'tracker' | 'about') => void;
@@ -30,21 +30,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab, onOpenBooking }) 
               <div className="w-8 h-8 rounded-lg bg-[#0284c7] text-white flex items-center justify-center">
                 <PaintRoller className="w-4 h-4" />
               </div>
-              <span className="font-extrabold text-lg text-white">Avomadoh Painting Services</span>
+              <span className="font-extrabold text-lg text-white">JudeCraft Finishes</span>
             </div>
 
             <p className="text-xs text-[#94a3b8] leading-relaxed max-w-sm">
-              Professional residential & commercial house painters in Ghana. Flawless interior walls, POP ceilings, decorative arches, storey buildings, and compound boundary walls. Zero splatter on floor tiles, screeding prep, and 2-year weather warranty.
+              Residential and commercial painting and finishing for interiors, exteriors, ceilings, and more. We serve clients across Ghana.
             </p>
 
             <div className="space-y-1.5 text-[#cbd5e1]">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Registrar General's Department (RGD) Registered Enterprise</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#38bdf8] shrink-0" />
-                <span>Greater Accra (East Legon, Spintex, Cantonments, Tema) & Kumasi</span>
+                <span className="text-[#38bdf8]">Service area:</span>
+                <span>Nationwide across Ghana</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -108,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab, onOpenBooking }) 
               Book a Free On-Site Inspection
             </h4>
             <p className="text-xs text-[#94a3b8]">
-              We visit your building anywhere in Greater Accra, Tema, or Kumasi to measure rooms and provide a firm, itemized quote in Ghana Cedis.
+              We work with clients across Ghana. Share your location and project details to arrange a visit and receive a quote in Ghana Cedis.
             </p>
 
             <div className="flex flex-col gap-2 pt-1">
@@ -120,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab, onOpenBooking }) 
               </button>
 
               <a
-                href="https://wa.me/233241234567?text=Hello%20Avomadoh%20Painters,%20I%20would%20like%20to%20schedule%20an%20inspection%20for%20my%20building."
+                href="https://wa.me/233241234567?text=Hello%20JudeCraft%20Finishes,%20I%20would%20like%20to%20schedule%20an%20inspection%20for%20my%20building."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg transition-colors flex items-center justify-center gap-2"
@@ -136,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab, onOpenBooking }) 
         {/* Bottom line */}
         <div className="pt-8 border-t border-[#141b2a] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#64748b] gap-2">
           <div>
-            © {new Date().getFullYear()} Avomadoh Painting Services. All rights reserved. Accra, Ghana.
+            © {new Date().getFullYear()} JudeCraft Finishes. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span>Coral Paints Ghana</span>
